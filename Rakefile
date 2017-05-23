@@ -8,12 +8,8 @@ Rake::TestTask.new(:test) do |t|
   t.test_files = FileList['test/**/*_test.rb']
 end
 
-task :build do
-  `gem build fern-params.gemspec`
-end
-
 task release: :build do
-  `gem push fern-api-#{Fern::Params::VERSION}`
+  `gem push pkg/fern-params-#{Fern::Params::VERSION}.gem`
 end
 
 task default: :test
