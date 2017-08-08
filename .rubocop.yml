@@ -21,3 +21,9 @@ Metrics/MethodLength:
 
 Style/AccessorMethodName:
   Enabled: false
+
+Lint/HandleExceptions:
+  Enabled: false
+
+Style/FileName:
+  Enabled: false
