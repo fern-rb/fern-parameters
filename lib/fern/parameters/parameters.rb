@@ -1,6 +1,7 @@
 require 'active_support/core_ext/module'
 require 'active_support/core_ext/hash/indifferent_access'
 
+require 'fern/parameters/invalid'
 require 'fern/parameters/validator'
 
 module Fern
@@ -28,11 +29,8 @@ module Fern
         validator = Validator.new(@config)
         validator.validate(@parameters)
 
-        if validator.errors.any?
-          raise 'Invalid!'
-        else
-          self.class.new(validator.declared, @config)
-        end
+        raise Invalid(validator.errors) if validator.errors.any?
+        self.class.new(validator.declared, @config)
       end
     end
   end

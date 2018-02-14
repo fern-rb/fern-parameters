@@ -49,11 +49,11 @@ module Fern
       def parse_type(val, type, array = false)
         meth = "validate_#{type}"
         if array
-          parsed = val.map { |el| self.send(meth, el) }
+          parsed = val.map { |el| send(meth, el) }
           return nil unless parsed.all? { |el| !el.nil? } && parsed
           parsed
         else
-          self.send(meth, val)
+          send(meth, val)
         end
       end
 
@@ -62,8 +62,6 @@ module Fern
           true
         elsif val.casecmp('false').zero?
           false
-        else
-          nil
         end
       end
 
@@ -73,7 +71,7 @@ module Fern
       end
 
       def validate_datetime(val)
-        DateTime.parse(val)
+        Time.parse(val)
       rescue ArgumentError
       end
 
@@ -136,7 +134,7 @@ module Fern
       end
 
       def indefinite_articlerize(word)
-        %w(a e i o u).include?(word[0].downcase) ? "an #{word}" : "a #{word}"
+        %w[a e i o u].include?(word[0].downcase) ? "an #{word}" : "a #{word}"
       end
     end
   end

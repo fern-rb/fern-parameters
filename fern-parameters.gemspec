@@ -15,14 +15,14 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.files       = Dir['lib/**/*']
 
-  s.required_ruby_version = '>= 2.0.0'
+  s.required_ruby_version = '>= 2.1.0'
 
-  s.add_development_dependency 'fern-api', '~> 0'
   s.add_development_dependency 'bundler', '~> 1.15'
-  s.add_development_dependency 'rake', '~> 10.0'
+  s.add_development_dependency 'fern-api', '~> 0'
   s.add_development_dependency 'minitest', '~> 5.0'
+  s.add_development_dependency 'rake', '~> 10.0'
 
-  s.add_runtime_dependency 'fern-api', '~> 0'
-  s.add_runtime_dependency 'activesupport', '~> 5.0'
   s.add_runtime_dependency 'actionpack', '~> 5.0'
+  s.add_runtime_dependency 'activesupport', '~> 5.0'
+  s.add_runtime_dependency 'fern-api', '~> 0'
 end
