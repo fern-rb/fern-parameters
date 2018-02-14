@@ -29,7 +29,10 @@ module Fern
         validator = Validator.new(@config)
         validator.validate(@parameters)
 
-        raise Invalid(validator.errors) if validator.errors.any?
+        if validator.errors.any?
+          raise Invalid.new(validator.errors), 'invalid parameters'
+        end
+
         self.class.new(validator.declared, @config)
       end
     end
