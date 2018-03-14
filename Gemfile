@@ -5,4 +5,4 @@ gem 'activesupport', '~> 5.0'
 gem 'fern-api', '~> 0'
 gem 'minitest', '~> 5.0'
 gem 'rake', '~> 10.0'
-gem 'rubocop', '~> 0.48', require: false
+gem 'rubocop', '~> 0.52', require: false
