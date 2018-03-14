@@ -1,3 +1,3 @@
-[![Build Status](https://travis-ci.org/fern-rb/fern-params.svg?branch=master)](https://travis-ci.org/fern-rb/fern-params)
+[![Build Status](https://travis-ci.org/fern-rb/fern-parameters.svg?branch=master)](https://travis-ci.org/fern-rb/fern-parameters)
 
-# Fern Params
+# Fern Parameters

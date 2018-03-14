@@ -1,6 +1,6 @@
 require 'bundler/gem_tasks'
 require 'rake/testtask'
-require 'fern/params/version'
+require 'fern/parameters/version'
 
 Rake::TestTask.new(:test) do |t|
   t.libs << 'test'
@@ -9,7 +9,7 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task release: :build do
-  `gem push pkg/fern-params-#{Fern::Params::VERSION}.gem`
+  `gem push pkg/fern-params-#{Fern::Parameters::VERSION}.gem`
 end
 
 task default: :test
