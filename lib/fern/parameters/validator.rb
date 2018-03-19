@@ -25,8 +25,8 @@ module Fern
               config
             )
           else
-            @declared[name] = config[:default] if config.key?(:default)
-            if config[:required] && @declared[name].nil?
+            @declared[name] = config[:constraints][:default] if config[:constraints].key?(:default)
+            if config[:constraints][:required] && @declared[name].nil?
               @errors.add(name, 'is required')
             end
           end
