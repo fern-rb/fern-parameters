@@ -18,5 +18,3 @@ module Fern
     end
   end
 end
-
-ActiveSupport.on_load(:action_controller) { include Fern::Parameters }

@@ -21,8 +21,8 @@ module Fern
         to: :@parameters
 
       def initialize(parameters, config)
-        @parameters = parameters.with_indifferent_access
-        @config = config.deep_symbolize_keys!
+        @parameters = parameters.with_indifferent_access.symbolize_keys
+        @config = config.deep_symbolize_keys! unless config.nil?
       end
 
       def validated
